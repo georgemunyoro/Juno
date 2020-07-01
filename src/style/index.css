@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: hidden;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+#root {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background: red;
+  grid-template-columns: 0rem 16rem auto;
+}
+
+#main-view, #sidebar, #player-container, #settings-view, #more-view, #download-view, #video-view {
+  width: 100%;
+  height: 100%;
+  background: #0A0B0A;
+}
+
+#download-view > iframe, #more-view > iframe, #video-view > iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#more-view > iframe::-webkit-scrollbar {
+  background: none;
+}
+
+#main-view {
+  background: #0A0B0A;
+}
+
+#player-container {
+}
+
+#toolbar {
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  top: 0; left: 0;
+  -webkit-app-region: drag;
+}
+
+#track-table {
+  width: calc(100% - 1rem);
+  border: 0 !important;
+  margin: 1rem;
+  background: #0A0B0A;
+}
+
+thead {
+  background: #000 !important;
+}
+
+.table-borderless td,
+.table-borderless th {
+    border: 0;
+}
+
+#track-list {
+  overflow-y: auto;
+}
+
+#track-list::-webkit-scrollbar {
+  background: none;
+}
+
+#track-list::-webkit-scrollbar-thumb {
+  background: royalblue;
+  border-left: 2px solid black;
+}
+
+.track-item {
+  width: 100%;
+  background: #0A0B0A;
+  color: silver;
+  border-radius: 5px;
+}
+
+td {
+  vertical-align: middle;
+}
+
+.track-item:hover {
+  background: black;
+}
+
+.active, .active:hover {
+  background: royalblue;
+  color: white;
+}
+
+#sidebar {
+  background: #010400;
+  padding-top: 0.5rem;
+}
+
+.sidebar-button {
+  color: white;
+  padding: 1rem;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.sidebar-button > i {
+  width: 2rem;
+}
+
+/*
+.sidebar-button:hover {
+  background: #FF9B71;
+  border-radius: 5px;
+}
+*/
+
+.sidebar-button .active {
+  background: #3454D1;
+}
+
+#player-container {
+  padding: 1rem;
+}
+
+#player-controls-container {
+  position: absolute;
+  background: white;
+  bottom: 0;
+  padding: 0.5rem 4rem;
+  width: 100%;
+  height: 3rem;
+}
+
+#player-controls {
+}
+
+#player {
+  position: absolute;
+  left: 4rem;
+  width: calc(100% - 8rem);
+  height: 2rem;
+}
+
+audio::-webkit-media-controls-panel {
+  background: white;
+}
+
+.mejs__container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: white !important;
+}
+
+.mejs-controls div.mejs-horizontal-volume-slider {
+    position: absolute;
+    top: 71px;
+    left: 165px;
+    cursor: pointer;
+}
+
+.mejs__controls {
+  background: #3454D1 !important;
+  border-bottom: 3px solid midnightblue;
+}
+
+.mejs__time-loaded {
+  background: white;
+}
+
+.mejs__time-hovered {
+  background: silver;
+}
+
+.mejs__time-current, .mejs__time-handle-content {
+  background: #000;
+}
+
+.player-control {
+  font-size: 1.2rem;
+  display: inline;
+  margin: 0.3rem;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.player-control:hover {
+  color: gray;
+}
+
+#more-view, #download-view, #video-view {
+  display: none;
+}
+
+#settings-view {
+  padding: 1rem;
+  display: none;
+}
+
+#settings-container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.pad-icon {
+  padding: 5px;
+}
+
+.pad-icon-small {
+  padding: 2px;
+}
+
+#more-view {
+}
+
+.source-item {
+  margin: 5px;
+  margin-left: 0 !important;
+}
+
+#cover-art {
+  box-shadow: 0 0 10px black; 
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 13px;
+  border-radius: 5px;
+  bottom: 4rem;
+  background: black;
+  border: none;
+  outline: none;
+}
+
+th {
+  line-height: 2.5rem;
+  background: black;
+  color: white !important;
+}
+
+#next-button {
+  position: absolute;
+  right: 10px;
+  bottom: 0.2rem;
+  border: none;
+}
+
+#prev-button {
+  position: absolute;
+  left: 10px;
+  bottom: 0.2rem;
+  border: none;
+}
+
+#prev-button:hover, #next-button:hover {
+  color: black !important;
+}
+
+audio:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+audio {
+  background: white;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.track-item td:first-child {
+  border-radius: 5px 0 0 5px;
+  padding: 0;
+  width: 7%;
+}
+
+.track-item td:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.art > img {
+  width: 50px;
+  height: 50px;
+}
+
+.art {
+  padding: 0 !important;
+  line-height: 50% !important;
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+.meta {
+  overflow: hidden;
+  width: 100px;
+}
+
+a:not([draggable=true]), img:not([draggable=true]) {
+    -webkit-user-drag: none;
+    user-drag: none; /* Technically not supported in Electron yet */
+}
+a[href^="http://"],
+a[href^="https://"],
+a[href^="ftp://"] {
+    -webkit-user-drag: auto;
+    user-drag: auto; /* Technically not supported in Electron yet */
+}
+
+body {
+  user-select: none;
+}

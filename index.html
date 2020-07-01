@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Juno</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+	<script src="./libs/jquery.js"></script>
+
+	<link rel="stylesheet" href="./libs/mediaelement-mediaelement-d8a667f/build/mediaelementplayer.css">
+	<link rel="stylesheet" href="./libs/bulma/css/bulma.min.css">
+	<link rel="stylesheet" href="./src/style/index.css">
+	<link rel="stylesheet" href="./src/scroll.css">
+	<link rel="stylesheet" href="./libs/fa/css/all.css">
+  </head>
+  <body>
+	<div id="root">
+	  <div id="player-container">
+
+	  </div>
+	  <div id="sidebar">
+		<img id="cover-art" alt="">
+		<ul>
+		  <li class="sidebar-button" id="sidebar-mymusic-button"><i class="fa fa-user"></i>My Music</li>
+		  <li class="sidebar-button" id="sidebar-more-button"><i class="fa fa-bars"></i>Charts</li>
+		  <li class="sidebar-button" id="sidebar-download-button"><i class="fa fa-download"></i>Download</li>
+		  <!--<li class="sidebar-button" id="sidebar-video-button"><i class="fa fa-video"></i>Video</li>-->
+		  <li class="sidebar-button" onclick="" id="sidebar-settings-button"><i class="fa fa-cog"></i>Settings</li>
+		</ul>
+	  </div>
+	  <div id="main-view" class="table-container">
+		<table border=0 id="track-table" class="table-borderless scroll table table-hover is-fullwidth"> <thead>
+			<tr>
+			  <th></th>
+			  <th>Title</th>
+			  <th>Artist</th>
+			<tr>
+		  </thead>
+		  <tbody id="track-list">
+		  </tbody>
+		</table>
+	  </div>
+	  <div id="more-view">
+		<iframe src="https://spotifycharts.com/regional" frameborder="0"></iframe>
+	  </div>
+	  <div id="download-view">
+		<iframe src="http://houndwave.herokuapp.com" frameborder="0"></iframe>
+	  </div>
+	  <div id="video-view">
+		<iframe is="x-frame-bypass" src="https://mtv.co.uk" frameborder="0"></iframe>
+	  </div>
+	  <div id="settings-view">
+		<form class="settings-container">
+		  <h1 class="title is-2">Settings</h1>
+		  <div class="field">
+			<p class="control" id="sources-list"></p>
+			<span class="pad-icon-small" ></span>
+			<p class="control">
+			  <a class="button is-black" id="add-source-button">
+				<i class="fa fa-plus pad-icon"></i> 
+				Add a source
+			  </a>
+			</p>
+		  </div>
+		</form>
+	  </div>
+	</div>
+
+	<div id="player-controls-container">
+	  <audio controls id="player"/>
+	</div>
+
+	<button class="button" onclick="prevTrack()" id="prev-button"><i class="fa fa-backward"></i></button>
+	<button class="button" onclick="nextTrack()" id="next-button"><i class="fa fa-forward"></i></button>
+
+	<script src="./libs/jquery.js"></script>
+	<script>
+		var appData = {
+		  tracks: [],
+		  currentTrack: null,
+		  currentTrackList: 'tracks',
+		  trackListCount: 0,
+		  player: document.getElementById('player'),
+		  views: ['more', 'settings', 'main', 'download' /*'video'*/],
+		  sidebar: {
+			active: 'mymusic',
+		  },
+		  sources: ['/home/lubuntu/Music/']
+		}
+
+		const sideBarButtons = ['mymusic', 'settings', 'more', 'download' /*'video'*/]
+	</script>	
+	<script src="./src/app.js"></script>
+  </body>
+
+</html>

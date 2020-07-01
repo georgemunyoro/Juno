@@ -1,0 +1,31 @@
+{
+  "name": "juno",
+  "version": "1.0.0",
+  "description": "Music player",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron --js-flags='--expose-gc' ."
+  },
+  "devDependencies": {
+    "electron": "^9.0.2"
+  },
+  "dependencies": {
+    "node-id3": "^0.1.17",
+    "electron-store": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgemunyoro/juno.git"
+  },
+  "keywords": [
+    "Music",
+    "Media",
+    "Audio"
+  ],
+  "author": "George Guvamatanga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/georgemunyoro/juno/issues"
+  },
+  "homepage": "https://github.com/georgemunyoro/juno#readme"
+}
