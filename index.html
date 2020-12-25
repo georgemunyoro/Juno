@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Juno</title>
-    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-
 	<script src="./libs/jquery.js"></script>
-
 	<link rel="stylesheet" href="./libs/mediaelement-mediaelement-d8a667f/build/mediaelementplayer.css">
 	<link rel="stylesheet" href="./libs/bulma/css/bulma.min.css">
 	<link rel="stylesheet" href="./src/style/index.css">
@@ -76,7 +73,7 @@
 
 	<script src="./libs/jquery.js"></script>
 	<script>
-		var appData = {
+		let appData = {
 		  tracks: [],
 		  currentTrack: null,
 		  currentTrackList: 'tracks',
@@ -89,7 +86,7 @@
 		  sources: ['/home/lubuntu/Music/']
 		}
 
-		const sideBarButtons = ['mymusic', 'settings', 'more', 'download' /*'video'*/]
+		const sideBarButtons = ['mymusic', 'settings', 'more', 'download']
 	</script>	
 	<script src="./src/app.js"></script>
   </body>
